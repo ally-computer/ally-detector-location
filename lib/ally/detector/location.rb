@@ -6,9 +6,11 @@ module Ally
     class Location
       include Ally::Detector
 
+      require 'ally/detector/zipcode'
+
       def detect
         # look for zipcode first
-        location = Ally::Detector::Zipcode.new(@inquiry).detect
+        location = Ally::Detector::Zipcode.new(@inquiry.raw).detect
         if location.nil?
           # if the inquiry has 'at' or 'in', detect place
           if @inquiry.words.include?('at') || @inquiry.words.include?('in')

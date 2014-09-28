@@ -19,6 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'ally'
+  spec.add_dependency 'ally-detector-zipcode'
+  spec.add_dependency 'ally-detector-place'
 
   # development dependencies
   spec.add_development_dependency "bundler", "~> 1.3"
